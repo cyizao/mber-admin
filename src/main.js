@@ -1,13 +1,3 @@
-// +----------------------------------------------------------------------
-// | CRMEB [ CRMEB赋能开发者，助力企业发展 ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2016~2022 https://www.crmeb.com All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed CRMEB并不是自由软件，未经许可不能去掉CRMEB相关版权
-// +----------------------------------------------------------------------
-// | Author: CRMEB Team <admin@crmeb.com>
-// +----------------------------------------------------------------------
-
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue';
@@ -16,8 +6,6 @@ import router from './router';
 import store from './store';
 
 import ViewUI from 'view-design';
-// import ViewUI from 'view-design'
-Vue.prototype.bus = new Vue();
 import Router from 'vue-router';
 import Auth from '@/libs/wechat';
 import 'view-design/dist/styles/iview.css';
@@ -91,6 +79,7 @@ Router.prototype.push = function push(location) {
 /* eslint-disable */
 if (process.env.NODE_ENV !== 'production') require('@/mock');
 window.Promise = Promise;
+Vue.prototype.bus = new Vue();
 Vue.prototype.$modalForm = modalForm;
 Vue.prototype.$modalSure = modalSure;
 Vue.prototype.$videoCloud = videoCloud;

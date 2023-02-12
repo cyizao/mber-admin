@@ -1,18 +1,9 @@
-// +---------------------------------------------------------------------
-// | CRMEB [ CRMEB赋能开发者，助力企业发展 ]
-// +---------------------------------------------------------------------
-// | Copyright (c) 2016~2022 https://www.crmeb.com All rights reserved.
-// +---------------------------------------------------------------------
-// | Licensed CRMEB并不是自由软件，未经许可不能去掉CRMEB相关版权
-// +---------------------------------------------------------------------
-// | Author: CRMEB Team <admin@crmeb.com>
-// +---------------------------------------------------------------------
-
 import axios from 'axios';
 import { Message } from 'iview';
 import { getCookies, removeCookies } from '@/libs/util';
 import Setting from '@/setting';
 import router from '@/router';
+
 const service = axios.create({
   baseURL: Setting.apiBaseURL,
   timeout: 10000, // 请求超时时间

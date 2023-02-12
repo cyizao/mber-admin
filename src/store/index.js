@@ -1,13 +1,3 @@
-// +----------------------------------------------------------------------
-// | CRMEB [ CRMEB赋能开发者，助力企业发展 ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2016~2022 https://www.crmeb.com All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed CRMEB并不是自由软件，未经许可不能去掉CRMEB相关版权
-// +----------------------------------------------------------------------
-// | Author: CRMEB Team <admin@crmeb.com>
-// +----------------------------------------------------------------------
-
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VuexPersistence from 'vuex-persist';
@@ -32,7 +22,6 @@ Vue.use(Vuex);
 // 持久化储存
 // const vuexLocal = new VuexPersistence({
 //     storage: window.localStorage,
-//
 // })
 
 export default new Vuex.Store({
@@ -48,7 +37,8 @@ export default new Vuex.Store({
   plugins: [
     new VuexPersistence({
       reducer: (state) => ({
-        user: state.user, //这个就是存入localStorage的值
+        //这个就是存入localStorage的值
+        user: state.user,
         app: state.app,
         menus: state.menus,
         userInfo: state.userInfo,

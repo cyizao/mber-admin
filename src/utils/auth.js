@@ -1,13 +1,3 @@
-// +----------------------------------------------------------------------
-// | CRMEB [ CRMEB赋能开发者，助力企业发展 ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2016~2022 https://www.crmeb.com All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed CRMEB并不是自由软件，未经许可不能去掉CRMEB相关版权
-// +----------------------------------------------------------------------
-// | Author: CRMEB Team <admin@crmeb.com>
-// +----------------------------------------------------------------------
-
 /**
  * @description 鉴权指令
  * 当传入的权限当前用户没有时，会移除该组件
@@ -19,7 +9,7 @@ export default {
   async install(Vue, options) {
     Vue.directive('auth', {
       inserted(el, binding, vnode) {
-        const { value } = binding;
+        const { value } = binding; // value：指令的绑定值，例如：v-auth="['admin']" 中，绑定值为 ['admin']
         const access = store.state.userInfo.access;
 
         if (value && value instanceof Array && value.length && access && access.length) {

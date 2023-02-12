@@ -1,13 +1,3 @@
-// +----------------------------------------------------------------------
-// | CRMEB [ CRMEB赋能开发者，助力企业发展 ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2016~2022 https://www.crmeb.com All rights reserved.
-// +----------------------------------------------------------------------
-// | Licensed CRMEB并不是自由软件，未经许可不能去掉CRMEB相关版权
-// +----------------------------------------------------------------------
-// | Author: CRMEB Team <admin@crmeb.com>
-// +----------------------------------------------------------------------
-
 import index from './modules/index';
 import product from './modules/product';
 import order from './modules/order';
@@ -24,10 +14,10 @@ import BasicLayout from '@/components/main';
 import statistic from './modules/statistic';
 import frameOut from './modules/frameOut';
 import division from './modules/division';
+
 /**
  * 在主框架内显示
  */
-
 const frameIn = [
   {
     path: '/admin/',

@@ -3,7 +3,7 @@
     <div class="container" :class="[fullWidth > 768 ? 'containerSamll' : 'containerBig']">
       <swiper :options="swiperOption" class="swiperPross" v-if="fullWidth > 768">
         <swiper-slide class="swiperPic" v-for="(item, index) in swiperList" :key="index">
-          <!-- <img :src="item.slide" alt="" /> -->
+          <img :src="item.slide" alt="" />
         </swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
       </swiper>
@@ -162,7 +162,7 @@ export default {
         .then((res) => {
           localStorage.setItem('ADMIN_TITLE', res.data.site_name);
           let data = res.data || {};
-          this.login_logo = data.login_logo ? data.login_logo : require('@/assets/images/logo.png');
+          this.login_logo =  data.login_logo ? data.login_logo : require('@/assets/images/logo.png');
           this.swiperList = data.slide.length ? data.slide : [{ slide: this.defaultSwiperList }];
           this.key = data.key;
           this.copyright = data.copyright;
@@ -195,8 +195,9 @@ export default {
         captchaVerification: params ? params.captchaVerification : '',
       })
         .then(async (res) => {
-          msg();
+          msg(); // 移除 ivew 全局提示
           let data = res.data;
+          console.log(data);
           let expires = this.getExpiresTime(data.expires_time);
           // 记录用户登陆信息
           setCookies('uuid', data.user_info.id, expires);
@@ -319,7 +320,7 @@ export default {
       document.getElementsByTagName('canvas')[0].className = 'index_bg';
     }
   },
-  beforeDestroy: function () {
+  beforeDestroy() {
     window.removeEventListener('resize', this.handleResize);
     document.getElementsByTagName('canvas')[0].removeAttribute('class', 'index_bg');
   },
